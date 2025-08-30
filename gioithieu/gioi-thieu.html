@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giới thiệu - Nguyễn Văn Quang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Hiệu ứng fade-in khi load trang */
+    .fade-in {
+      animation: fadeInAnimation 1.5s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInAnimation {
+      to {
+        opacity: 1;
+      }
+    }
+    /* Hiệu ứng hover đổi màu chữ */
+    .hover-color:hover {
+      color: #dc2626; /* Màu đỏ Tailwind red-600 */
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-r from-red-100 via-red-50 to-white text-gray-900">
+
+  <header class="bg-red-600 text-white p-8 shadow-lg fade-in">
+    <h1 class="text-4xl font-extrabold tracking-wide">Giới thiệu về tôi</h1>
+  </header>
+
+  <main class="max-w-3xl mx-auto p-10 bg-white rounded-xl shadow-xl mt-12 fade-in">
+    <section>
+      <h2 class="text-3xl font-semibold mb-6 text-red-600 hover-color">Xin chào!</h2>
+      <p class="mb-6 text-lg hover-color">Tôi sinh ra ở <strong>Chương Mỹ, Hà Nội</strong>.</p>
+      <p class="mb-6 text-lg hover-color">Hiện tại tôi đang học tập tại <strong>Trường Đại học Công nghệ Đông Á</strong>.</p>
+      <p class="mb-6 text-lg hover-color">Và tôi đang học lập trình (code) để phát triển kỹ năng của mình.</p>
+    </section>
+  </main>
+
+</body>
+</html>

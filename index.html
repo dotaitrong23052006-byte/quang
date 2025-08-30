@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog cá nhân - NguyenVanQuang</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
   <!-- Header -->
-  <header class="bg-blue-600 text-white shadow-lg">
-    <div class="max-w-5xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">NguyenVanQuang</h1>
-      <nav class="space-x-4">
-        <a href="#about" class="hover:underline">Giới thiệu</a>
-        <a href="#blog" class="hover:underline">Blog</a>
-        <a href="#contact" class="hover:underline">Liên hệ</a>
-      </nav>
-    </div>
+<header class="bg-red-600 text-white shadow-lg">
+  <div class="max-w-5xl mx-auto flex items-center p-4">
+    <h1 class="text-2xl font-bold flex-1 text-left">DOTAITRONG</h1>
+    <nav class="space-x-6 flex-shrink-0">
+      <a href="gioithieu/gioi-thieu.html" class="hover:underline">Giới thiệu</a>
+      <a href="#blog" class="hover:underline">Blog</a>
+      <div id="contact-menu" class="relative group inline-block ml-4">
+        <a href="#contact" id="contact-link" class="hover:underline cursor-pointer select-none">Liên hệ</a>
+        <div id="dropdown" class="absolute right-0 mt-2 w-32 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible pointer-events-none transition-opacity duration-300 z-50">
+          <a href="https://www.facebook.com/Trongttok?locale=vi_VN" target="_blank" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Facebook</a>
+          <a href="https://zalo.me/0365277340" target="_blank" class="block px-4 py-2 hover:bg-gray-100 whitespace-nowrap">Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
   </header>
+  <script>
+    const contactMenu = document.getElementById('contact-menu');
+    const dropdown = document.getElementById('dropdown');
+    let timeoutId;
+
+    contactMenu.addEventListener('mouseenter', () => {
+      clearTimeout(timeoutId);
+      dropdown.style.opacity = '1';
+      dropdown.style.visibility = 'visible';
+      dropdown.style.pointerEvents = 'auto';
+    });
+
+    contactMenu.addEventListener('mouseleave', () => {
+      timeoutId = setTimeout(() => {
+        dropdown.style.opacity = '0';
+        dropdown.style.visibility = 'hidden';
+        dropdown.style.pointerEvents = 'none';
+      }, 500);
+    });
+  </script>
 
   <!-- Nội dung chính -->
   <main class="max-w-5xl mx-auto p-4">
@@ -26,8 +52,8 @@
     <!-- Giới thiệu -->
     <section id="about" class="text-center mt-8">
       <img src="img/quang.jpg.jpg" alt="Avatar"
-           class="rounded-full mx-auto shadow-lg w-44 h-44 object-cover border-4 border-blue-600">
-      <h2 class="text-3xl font-bold mt-4">Xin chào, tôi là Nguyễn Văn Quang</h2>
+           class="rounded-full mx-auto shadow-lg w-44 h-44 object-cover border-4 border-red-600" />
+      <h2 class="text-3xl font-bold mt-4">Xin chào, tôi là Đỗ Tài Trọng</h2>
       <p class="mt-2 text-lg text-gray-600">
         Lập trình viên • Blogger • Đam mê chia sẻ kiến thức về lập trình và mạng.
       </p>
@@ -39,19 +65,19 @@
       <div class="grid md:grid-cols-2 gap-6">
         <!-- Bài viết 1 -->
         <div class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition">
-          <h4 class="text-xl font-bold text-blue-600">Cấu hình Router Mikrotik cơ bản</h4>
+          <h4 class="text-xl font-bold text-red-600">JavaScript cơ bản </h4>
           <p class="text-gray-700 mt-3">
-            Hướng dẫn chi tiết cách cấu hình Router Mikrotik cho người mới bắt đầu.
+            Hướng dẫn chi tiết cách học Java Scrip cho người mới bắt đầu.
           </p>
-          <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">Đọc thêm →</a>
+          <a href="https://codelearn.io/learning/javascript-co-ban?srsltid=AfmBOortnSqLa_aMfsX2PcFC329ctblEBt78Cqc9lFqKpT4Ov60CzK4-" class="inline-block mt-4 text-red-600 font-semibold hover:underline">Đọc thêm →</a>
         </div>
         <!-- Bài viết 2 -->
         <div class="bg-white p-6 rounded-xl shadow hover:shadow-2xl transition">
-          <h4 class="text-xl font-bold text-blue-600">Tối ưu tốc độ Wi-Fi tại nhà</h4>
+          <h4 class="text-xl font-bold text-red-600">Code C# , C++ cơ bản </h4>
           <p class="text-gray-700 mt-3">
-            Những mẹo đơn giản để tăng tốc Wi-Fi và cải thiện kết nối mạng.
+            Hướng dẫn chi tiết cách học code c , c++ cho người mới bắt đầu.
           </p>
-          <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:underline">Đọc thêm →</a>
+          <a href="https://topdev.vn/blog/lap-trinh-c/?utm_source=google&utm_medium=cpc&gad_source=1&gad_campaignid=21605465253&gbraid=0AAAAADDtBSA4D-zdUXAIffulr2L4O27I8&gclid=Cj0KCQjwn8XFBhCxARIsAMyH8BvPx52GgOKFfySPEabUestwJsYAnNdj9lr0WzE1z3jb5kVjjZ9LBw0aArckEALw_wcB" class="inline-block mt-4 text-red-600 font-semibold hover:underline">Đọc thêm →</a>
         </div>
       </div>
     </section>
@@ -59,35 +85,90 @@
     <!-- Form liên hệ -->
     <section id="contact" class="mt-12 bg-white p-6 rounded-xl shadow-lg">
       <h3 class="text-2xl font-semibold mb-6 text-center">📩 Liên hệ</h3>
+
+      <!-- Thông báo -->
+      <div id="notification" class="hidden text-white text-center py-3 mb-6 rounded"></div>
+
       <form class="space-y-4">
         <div>
           <label for="name" class="block font-semibold">Họ tên</label>
           <input id="name" type="text" placeholder="Nhập tên của bạn"
-                 class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                 class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500" />
         </div>
         <div>
           <label for="email" class="block font-semibold">Email</label>
           <input id="email" type="email" placeholder="example@gmail.com"
-                 class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                 class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500" />
         </div>
         <div>
           <label for="message" class="block font-semibold">Nội dung</label>
           <textarea id="message" rows="4" placeholder="Viết lời nhắn của bạn..."
-                    class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
         </div>
         <button type="submit"
-                class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                class="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition w-full">
           Gửi tin nhắn
         </button>
       </form>
-    </section>
 
+      <!-- Mạng xã hội -->
+      <div class="mt-8 text-center">
+        <p class="text-lg font-semibold mb-4">Hoặc liên hệ qua:</p>
+        <div class="flex justify-center space-x-6">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/Trongttok?locale=vi_VN" target="_blank" class="flex items-center space-x-2 text-red-600 hover:underline">
+            <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" class="w-6 h-6" />
+            <span>Facebook</span>
+          </a>
+
+          <!-- Zalo -->
+          <a href="https://zalo.me/0365277340" target="_blank" class="flex items-center space-x-2 text-red-500 hover:underline">
+            <img src="https://cdn-icons-png.flaticon.com/24/408/408209.png" alt="Zalo" class="w-6 h-6" />
+            <span>Zalo</span>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-blue-600 text-white text-center p-4 mt-12">
-    <p>&copy; 2025 NguyenVanQuang - Blog cá nhân. All rights reserved.</p>
+  <footer class="bg-red-600 text-white text-center p-4 mt-12">
+    <p>&copy; Trọng Tập Code</p>
   </footer>
 
+  <script>
+    const form = document.querySelector('form');
+    const notification = document.getElementById('notification');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (name === '' || email === '' || message === '') {
+        notification.textContent = 'Bạn vui lòng điền thông tin';
+        notification.classList.remove('hidden');
+        notification.classList.remove('bg-green-500');
+        notification.classList.add('bg-red-500');
+
+        setTimeout(() => {
+          notification.classList.add('hidden');
+        }, 3000);
+      } else {
+        notification.textContent = 'Bạn đã gửi tin nhắn';
+        notification.classList.remove('hidden');
+        notification.classList.remove('bg-red-500');
+        notification.classList.add('bg-green-500');
+
+        setTimeout(() => {
+          notification.classList.add('hidden');
+        }, 3000);
+
+        form.reset();
+      }
+    });
+  </script>
 </body>
 </html>
